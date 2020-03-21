@@ -1,20 +1,24 @@
+import { execSync } from 'child_process';
 export class SassShadow{
     constructor(config){
-        // TODO
+        if (config) {
+            Object.assign(this, config)
+        }
+        this.loadPath = this.loadPath || "node_modules"
     }
     get plugin(){
+        // TODO: This context is lost in load
+        const loadPath = this.loadPath;
         return {
-            name: 'string-sass', // this name will show up in warnings and errors
+            name: 'sass-shadow', // this name will show up in warnings and errors
             load(id) {
-                if(id.endsWith('.scss')){
-                    const a = execSync(`sass ${id} --load-path=node_modules`);
-                    return {
-                        code: `export default \`${a.toString('utf8')}\``,
-                        map: null
-                    }
-                }
-                else{
-                    return null;
+                if(!id.endsWith('.scss')) return null;
+                const a = execSync(`sass ${id} --load-path=${loadPath}`);
+                // TODO: Handle all encodings
+                // TODO: Add source Map
+                return {
+                    code: `export default \`${a.toString('utf8')}\``,
+                    map: null
                 }
             },
             resolveFileUrl({ chunkId, fileName, format, moduleId, referenceId, relativePath }) {

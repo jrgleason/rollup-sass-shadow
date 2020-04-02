@@ -5,6 +5,12 @@ Simple plugin to allow for inline Sass from dart sass. This allows for things li
 
 # Example
 
+## Install
+
+    npm install -D @jrg/rollup-sass-shadow
+    
+## Use
+
     // Rollup config
     import SassShadow from '@jrg/rollup-sass-shadow';
     const __dirname = path.dirname(new URL(import.meta.url).pathname);

@@ -1,6 +1,6 @@
 {
   "name": "@jrg/rollup-sass-shadow",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "Simple Rollup plugin for use with Sass to allow the output to be resolved and stored in an output artifact. This functionality does not seem to be available in other plugins.",
   "main": "index.mjs",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jrgleason/rollup-sass-shadow/issues"
   },
-  "homepage": "https://github.com/jrgleason/rollup-sass-shadow#readme"
+  "homepage": "https://github.com/jrgleason/rollup-sass-shadow#readme",
+  "dependencies": {
+    "rollup-pluginutils": "^2.8.2"
+  }
 }

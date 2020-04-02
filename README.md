@@ -1,5 +1,5 @@
 # Rollup Plugin for ShadowDom Sass
-##rollup-sass-shadow
+## rollup-sass-shadow
 
 Simple plugin to allow for inline Sass from dart sass. This allows for things like styles to be injected into ShadowDom
 
